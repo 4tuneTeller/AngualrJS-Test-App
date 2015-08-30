@@ -1,0 +1,16 @@
+﻿<!--<script type="text/javascript" src="Scripts/PieChart.js"></script>
+<script type="text/javascript" src="Scripts/HomePageScript.js"></script>
+<div id="pieChart"></div>-->
+<div class="canvas-div">
+    <!-- канвас для диаграммы с собственной директивой, данные для отрисовки передаются в chart -->
+    <canvas my-piechart chart="chartData" width="200" height="200"></canvas>
+</div>
+<div class="pie-legend">
+    <!-- легенда диаграммы -->
+    <ul>
+        <li ng-repeat="x in chartData" style="color:{{ x.color }}">
+            {{ x.title }}: {{ x.amount }}
+        </li>
+    </ul>
+</div>
+

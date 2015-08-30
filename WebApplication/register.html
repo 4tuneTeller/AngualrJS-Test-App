@@ -1,0 +1,20 @@
+﻿<div ng-show="error">{{error}}</div>
+<form name="form" ng-submit="register()">
+    <div>
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" ng-model="username" required />
+        <span ng-show="form.username.$dirty && form.username.$error.required">Username is required</span>
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" ng-model="password" required />
+        <span ng-show="form.password.$dirty && form.password.$error.required">Password is required</span>
+    </div>
+    <div>
+        <button type="submit" ng-disabled="form.$invalid || dataLoading">Register</button>
+        <label ng-if="dataLoading">Please wait...</label>
+    </div>
+    <div>
+        <a ng-href="/login">I'm already registered and want to login</a>
+    </div>
+</form>
